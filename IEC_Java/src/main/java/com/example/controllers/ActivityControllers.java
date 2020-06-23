@@ -1,4 +1,4 @@
-package com.examplecontrollers;
+package com.example.controllers;
 
 import java.util.List;
 
@@ -31,6 +31,8 @@ public class ActivityControllers {
 	
 		return activityServiceImpl.save(activity);
 	}
+	
+	
 	
 	
 
