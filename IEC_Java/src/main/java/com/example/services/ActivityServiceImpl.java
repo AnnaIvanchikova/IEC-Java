@@ -20,4 +20,12 @@ public class ActivityServiceImpl implements ActivityService{
 		return activityRepository.findAll();
 	}
 
+	@Override
+	public Activity save(Activity activity) {
+		// TODO Auto-generated method stub
+		return activityRepository.save(activity);
+	}
+	
+	
+
 }

@@ -6,5 +6,7 @@ import com.example.entity.Activity;
 
 public interface ActivityService {
 	List<Activity> getAllActivity();
+	
+	Activity save(Activity activity);
 
 }
