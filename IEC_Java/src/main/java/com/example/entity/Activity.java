@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Activity {
 
 	@Id
-	private ObjectId id;
+	private ObjectId _id;
     private String title;
     private String summary;
     private String description;
@@ -26,11 +26,11 @@ public class Activity {
 	
 	
 	public ObjectId getId() {
-		return id;
+		return _id;
 	}
 
 	public void setId(ObjectId id) {
-		this.id = id;
+		this._id = id;
 	}
 
 

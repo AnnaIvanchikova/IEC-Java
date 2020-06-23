@@ -1,9 +1,0 @@
-db.Activity.insertOne({
-"_id":2,
-"title":"Learning of English",
-"summary":"express course",
-"description":"express course for smart people",
-"startDateTime": new Date("2020-08-20"), 
-"endDateTime": new Date("2020-08-22"),
-"info": "48 hours"
-})
