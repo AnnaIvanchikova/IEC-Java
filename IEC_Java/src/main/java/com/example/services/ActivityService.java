@@ -8,5 +8,7 @@ public interface ActivityService {
 	List<Activity> getAllActivity();
 	
 	Activity save(Activity activity);
+		
+	Activity updateActivity(Activity activity);
 
 }
