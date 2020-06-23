@@ -21,30 +21,31 @@ import com.example.entity.Activity;
 import com.example.services.ActivityServiceImpl;
 
 @RestController
+@RequestMapping("/activity")
 public class ActivityControllers {
 	
 	@Autowired
 	private ActivityServiceImpl activityServiceImpl;
 	
-	@GetMapping(value = "/activities")
+	@GetMapping(value = "/all")
 	public List<Activity> getAllActivities(){
 		return activityServiceImpl.getAllActivity();
 	}
 	
 
-	@PostMapping(value = "/addactivities", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 	public Activity addActivity(@RequestBody Activity activity) {
 	
 		return activityServiceImpl.save(activity);
 	}
 	
-	@PutMapping("/activity/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<Activity> saveOrUpdateActivity(@PathVariable String id, @RequestBody Activity activity) {
         return activityServiceImpl.updateActivity(activity, id);
     }
 	
 	
-	@DeleteMapping("/activity/{id}")
+	@DeleteMapping("/{id}")
     public void deleteBook(@PathVariable String id) {
 		activityServiceImpl.deleteActivity(id);
     }
