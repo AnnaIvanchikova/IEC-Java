@@ -10,23 +10,37 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Activity {
 
 	@Id
-	private Double _id;
+	private String _id;
 	private String title;
 	private String summary;
 	private String description;
-	private Date startDateTime;
-	private Date endDateTime;
+	private String startDateTime;
+	private String endDateTime;
 	private String info;
+
+	
+	
+	public Activity(String _id, String title, String summary, String description, String startDateTime,
+			String endDateTime, String info) {
+		
+		this._id = _id;
+		this.title = title;
+		this.summary = summary;
+		this.description = description;
+		this.startDateTime = startDateTime;
+		this.endDateTime = endDateTime;
+		this.info = info;
+	}
 
 	public Activity() {
 
 	}
 
-	public Double get_id() {
-		return _id;//.toHexString();
+	public String get_id() {
+		return _id;
 	}
 
-	public void set_id(Double _id) {
+	public void set_id(String _id) {
 		this._id = _id;
 	}
 
@@ -54,19 +68,19 @@ public class Activity {
 		this.description = description;
 	}
 
-	public Date getStartDateTime() {
+	public String getStartDateTime() {
 		return startDateTime;
 	}
 
-	public void setStartDateTime(Date startDateTime) {
+	public void setStartDateTime(String startDateTime) {
 		this.startDateTime = startDateTime;
 	}
 
-	public Date getEndDateTime() {
+	public String getEndDateTime() {
 		return endDateTime;
 	}
 
-	public void setEndDateTime(Date endDateTime) {
+	public void setEndDateTime(String endDateTime) {
 		this.endDateTime = endDateTime;
 	}
 
@@ -77,5 +91,13 @@ public class Activity {
 	public void setInfo(String info) {
 		this.info = info;
 	}
+
+	@Override
+	public String toString() {
+		return "Activity [_id=" + _id + ", title=" + title + ", summary=" + summary + ", description=" + description
+				+ ", startDateTime=" + startDateTime + ", endDateTime=" + endDateTime + ", info=" + info + "]";
+	}
+	
+	
 
 }
