@@ -17,7 +17,7 @@ public class ActivityServiceImpl implements ActivityService{
 	@Override
 	public List<Activity> getAllActivity() {
 		// TODO Auto-generated method stub
-		return null;
+		return activityRepository.findAll();
 	}
 
 }
