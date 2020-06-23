@@ -39,7 +39,7 @@ public class ActivityControllers {
 	}
 	
 	@PutMapping("/activity/{id}")
-	public Activity saveOrUpdateActivity(@PathVariable String id, @RequestBody Activity activity) {
+	public ResponseEntity<Activity> saveOrUpdateActivity(@PathVariable String id, @RequestBody Activity activity) {
         return activityServiceImpl.updateActivity(activity, id);
     }
 	

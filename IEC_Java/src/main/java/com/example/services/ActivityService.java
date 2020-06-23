@@ -3,6 +3,8 @@ package com.example.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.ResponseEntity;
+
 import com.example.entity.Activity;
 
 public interface ActivityService {
@@ -10,7 +12,7 @@ public interface ActivityService {
 	
 	Activity save(Activity activity);
 		
-	Activity updateActivity(Activity activity, String id);
+	ResponseEntity<Activity> updateActivity(Activity activity, String id);
 	
 	Optional<Activity> findActivityById(String id);
 	

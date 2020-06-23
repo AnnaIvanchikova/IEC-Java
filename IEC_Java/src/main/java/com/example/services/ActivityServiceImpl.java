@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.Activity;
@@ -29,7 +31,7 @@ public class ActivityServiceImpl implements ActivityService{
 	}
 
 	
-	public Activity updateActivity(Activity activity, String id) {
+	public ResponseEntity<Activity> updateActivity(Activity activity, String id) {
 		Optional<Activity> activityDB = findActivityById(id);
 		if(activityDB.isPresent()) {
 			Activity activityUpdate = activityDB.get();
@@ -41,10 +43,11 @@ public class ActivityServiceImpl implements ActivityService{
 			activityUpdate.setSummary(activity.getSummary());
 			activityUpdate.setTitle(activity.getTitle());
 			activityRepository.save(activityUpdate);
-			return activityUpdate;
-		}
+			return new ResponseEntity<>(activityRepository.save(activityUpdate), HttpStatus.OK);
+		}else {
 //		// TODO Auto-generated method stub
-		return null;
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 	@Override
