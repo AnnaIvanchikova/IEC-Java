@@ -1,16 +1,15 @@
-package com.example.services;
+package com.iec.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.example.entity.Activity;
-import com.example.repository.ActivityRepository;
+import com.iec.entity.Activity;
+import com.iec.repository.ActivityRepository;
 
 @Service
 public class ActivityServiceImpl implements ActivityService{

@@ -1,9 +1,8 @@
-package com.example.repository;
+package com.iec.repository;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.example.entity.Activity;
+import com.iec.entity.Activity;
 
 public interface ActivityRepository extends MongoRepository<Activity, String>{
 	

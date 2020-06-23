@@ -1,11 +1,11 @@
-package com.example.services;
+package com.iec.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 
-import com.example.entity.Activity;
+import com.iec.entity.Activity;
 
 public interface ActivityService {
 	List<Activity> getAllActivity();
