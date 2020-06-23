@@ -13,5 +13,7 @@ public interface ActivityService {
 	Activity updateActivity(Activity activity, String id);
 	
 	Optional<Activity> findActivityById(String id);
+	
+	void deleteActivity(String id);
 
 }

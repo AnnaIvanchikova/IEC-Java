@@ -52,6 +52,12 @@ public class ActivityServiceImpl implements ActivityService{
 		// TODO Auto-generated method stub
 		return activityRepository.findById(id);
 	}
+
+	@Override
+	public void deleteActivity(String id) {
+		// TODO Auto-generated method stub
+		activityRepository.deleteById(id);
+	}
 	
 	
 
