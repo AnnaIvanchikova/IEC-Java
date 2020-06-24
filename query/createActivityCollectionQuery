@@ -27,12 +27,12 @@ db.createCollection("Activity", {
 					description: "must be a string with maximum size 200 and is required"
 				},
 				startDateTime: {
-					bsonType: "timestamp",
-					description: "must be a timestamp ISO and is required"
+					bsonType: "date",
+					description: "must be a ISO date time and is required"
 				},
 				endDateTime: {
-					bsonType: "timestamp",
-					description: "must be a timestamp ISO and is required"
+					bsonType: "date",
+					description: "must be a ISO date time and is required"
 				},
 				info: {
 					bsonType: "string",
