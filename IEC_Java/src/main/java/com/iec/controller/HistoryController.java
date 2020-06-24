@@ -2,6 +2,7 @@ package com.iec.controller;
 
 import com.iec.entity.Activity;
 import com.iec.entity.History;
+import com.iec.exception.IncorrectValueException;
 import com.iec.services.ActivityServiceImpl;
 import com.iec.services.HistoryServiceImpl;
 
@@ -25,8 +26,11 @@ public class HistoryController {
 
 
     @PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
-    public History addHistory(@RequestBody History history) {
-
+    public History addHistory(@RequestBody History history) throws IncorrectValueException {
+    	if (!(history.getType().equals("UPDATE") || history.getType().equals("COMPOSE"))) {
+    	    throw new IncorrectValueException("Incorrect value entered for field type " +
+    	            "in History Collection: " +  history.getType());
+    	}
         return historyServiceImpl.save(history);
     }
 
