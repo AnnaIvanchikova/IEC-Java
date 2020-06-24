@@ -27,7 +27,7 @@ public class HistoryServiceImpl implements HistoryService {
 
     @Override
     public History save(History history) {
-        // TODO Auto-generated method stub
+        
         return historyRepository.save(history);
     }
 

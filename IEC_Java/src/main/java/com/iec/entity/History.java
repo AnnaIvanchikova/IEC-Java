@@ -16,8 +16,20 @@ public class History {
     private Date dateTime;
     private String type;
     private BasicDBObject changes;
+    
+    
 
-    public String get_id() {
+    public History(Date dateTime, String type, BasicDBObject changes) {
+		this.dateTime = dateTime;
+		this.type = type;
+		this.changes = changes;
+	}
+    
+    public History() {
+		
+	}
+
+	public String get_id() {
         return _id;
     }
 

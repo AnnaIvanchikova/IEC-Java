@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.iec.entity.Activity;
 import com.iec.services.ActivityServiceImpl;
+import com.iec.services.HistoryServiceImpl;
 
 @RestController
 @RequestMapping("/activity")
@@ -23,6 +24,7 @@ public class ActivityControllers {
 	
 	@Autowired
 	private ActivityServiceImpl activityServiceImpl;
+	
 	
 	@GetMapping(value = "/all")
 	public List<Activity> getAllActivities(){
@@ -32,7 +34,7 @@ public class ActivityControllers {
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 	public Activity addActivity(@RequestBody Activity activity) {
-	
+		
 		return activityServiceImpl.save(activity);
 	}
 	
